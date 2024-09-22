@@ -13,3 +13,31 @@ LIBRARY "XInput1_4"
     XInputGetStateEx                = XInputGetStateEx                  @100
     XInputPowerOff                  = XInputPowerOff                    @103
     XInputGetCapabilitiesEx         = XInputGetCapabilitiesEx           @108
+
+
+
+
+LIBRARY "d3d12"
+
+  EXPORTS
+
+    D3D12CreateDevice                             = D3D12CreateDevice
+    D3D12GetDebugInterface                        = D3D12GetDebugInterface
+    D3D12CreateRootSignatureDeserializer          = D3D12CreateRootSignatureDeserializer
+    D3D12CreateVersionedRootSignatureDeserializer = D3D12CreateVersionedRootSignatureDeserializer
+    D3D12GetInterface                             = D3D12GetInterface
+    D3D12SerializeRootSignature                   = D3D12SerializeRootSignature
+    D3D12SerializeVersionedRootSignature          = D3D12SerializeVersionedRootSignature
+
+
+
+LIBRARY  "dxgi"
+
+  EXPORTS
+
+    CreateDXGIFactory                = CreateDXGIFactory
+    CreateDXGIFactory1               = CreateDXGIFactory1
+    CreateDXGIFactory2               = CreateDXGIFactory2
+    DXGIGetDebugInterface1           = DXGIGetDebugInterface1
+    DXGIDeclareAdapterRemovalSupport = DXGIDeclareAdapterRemovalSupport
+    DXGIDisableVBlankVirtualization  = DXGIDisableVBlankVirtualization

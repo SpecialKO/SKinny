@@ -8,7 +8,8 @@ struct config_s {
   wchar_t wszPathToSystemXInput1_2   [MAX_PATH] = L"";
   wchar_t wszPathToSystemXInput1_1   [MAX_PATH] = L"";
   wchar_t wszPathToSystemXInput9_1_0 [MAX_PATH] = L"";
-  DWORD   dwFillTheSwamp                        = 0x1;
+  wchar_t wszPathToSystemDXGI        [MAX_PATH] = L"";
+  wchar_t wszPathToSystemD3D12       [MAX_PATH] = L"";
 };
 
 extern config_s config;
