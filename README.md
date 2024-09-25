@@ -1,5 +1,17 @@
-Disables Fullscreen Exclusive and translates NVAPI HDR to DXGI to allow games that need Fullscreen Exclusive for HDR to work in borderless window mode.
+## SKinny is a set of fixes derived from Special K that do not require Special K<br>
 
-Move `XInput1_4.dll` to your game's directory; all Unreal Engine games use XInput1_3, others may use XInput9_1_0 or XInput1_4
+## StreamlineCondom
+ + Reconfigures NVIDIA Streamline to output debug information if developers have turned it off
+ + Reconfigures NVIDIA Streamline to use DXGI Factory Proxies instead of vftable hooks to improve DLSS3 Frame Generation compatibility
 
-The DLL can also be loaded using a standard asi loader if you name it `TinyFakeFullscreen.asi`
+    > *Place `SKinny.dll` in the same directory as `sl.interposer.dll` and name it either `dxgi.dll` or `d3d12.dll`.*
+
+<br>
+
+## TinyFakeFullscreen
+ + Disables Fullscreen Exclusive in D3D11 and D3D12 games and replaces it with Borderless Fullscreen
+ + Translates NVAPI HDR to DXGI to enable native HDR in many older HDR games without using Fullscreen Exclusive
+
+   > *Place `SKinny.dll` in the game's directory and name it `xinput1_4.dll`, `dxgi.dll` or `d3d12.dll`.*
+   
+*TinyFakeFullscreen can also be loaded by an ASI loader if named `SKFakeFullscreen.asi`.*
