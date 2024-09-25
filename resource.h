@@ -1,6 +1,7 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by TinyFakeFullscreen.rc
+// Used by SKinny.rc
+//
 
 // Next default values for new objects
 // 
