@@ -43,6 +43,21 @@ slInit_Detour (const sl::Preferences &pref, uint64_t sdkVersion = sl::kSDKVersio
     slInit_Original (pref, sdkVersion);
 }
 
+#include <tuple>
+
+using  slIsFeatureSupported_pfn = sl::Result (*)(sl::Feature feature, const sl::AdapterInfo& adapterInfo);
+static slIsFeatureSupported_pfn
+       slIsFeatureSupported_Original = nullptr;
+
+sl::Result
+slIsFeatureSupported_Detour (sl::Feature feature, const sl::AdapterInfo& adapterInfo)
+{
+  std::ignore = feature;
+  std::ignore = adapterInfo;
+
+  return sl::Result::eOk;
+}
+
 bool
 SK_COMPAT_CheckStreamlineSupport (void)
 {
@@ -56,6 +71,11 @@ SK_COMPAT_CheckStreamlineSupport (void)
                                 "slInit",
                                  slInit_Detour,
                       (void **)(&slInit_Original) );
+
+      SK_CreateDLLHook2 (      L"sl.interposer.dll",
+                                "slIsFeatureSupported",
+                                 slIsFeatureSupported_Detour,
+                      (void **)(&slIsFeatureSupported_Original) );
 
       MH_ApplyQueued ();
     }

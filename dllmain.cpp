@@ -635,7 +635,7 @@ FakeFullscreen_InitThread (LPVOID)
     );
 
   // Special K's DLL might be injected after creating the window above...
-  //if (! GetModuleHandleW (L"SpecialK64.dll"))
+  if (! GetModuleHandleW (L"SpecialK64.dll"))
   {
     using   CreateDXGIFactory2_pfn = HRESULT (WINAPI *)(UINT,REFIID,void**);
     static  CreateDXGIFactory2_pfn
