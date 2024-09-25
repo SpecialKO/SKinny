@@ -9,12 +9,6 @@ DWORD
 WINAPI
 XInputGetState (DWORD dwUserIndex, XINPUT_STATE *pState)
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   DWORD dwState;
 
   static XInputGetState_pfn _XInputGetState =
@@ -36,12 +30,6 @@ DWORD
 WINAPI
 XInputGetStateEx (DWORD dwUserIndex, XINPUT_STATE_EX *pState)
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetStateEx_pfn _XInputGetStateEx =
         (XInputGetStateEx_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -59,12 +47,6 @@ XInputSetState (
   _In_    DWORD             dwUserIndex,
   _Inout_ XINPUT_VIBRATION *pVibration )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputSetState_pfn _XInputSetState =
         (XInputSetState_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -88,12 +70,6 @@ XInputGetCapabilities (
   _In_  DWORD                dwFlags,
   _Out_ XINPUT_CAPABILITIES *pCapabilities )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetCapabilities_pfn _XInputGetCapabilities =
         (XInputGetCapabilities_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -113,12 +89,6 @@ XInputGetCapabilitiesEx (
   _In_  DWORD                   dwFlags,
   _Out_ XINPUT_CAPABILITIES_EX *pCapabilitiesEx )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetCapabilitiesEx_pfn _XInputGetCapabilitiesEx =
         (XInputGetCapabilitiesEx_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -136,12 +106,6 @@ XInputGetBatteryInformation (
   _In_  BYTE                        devType,
   _Out_ XINPUT_BATTERY_INFORMATION *pBatteryInformation )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetBatteryInformation_pfn _XInputGetBatteryInformation =
         (XInputGetBatteryInformation_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -160,12 +124,6 @@ XInputGetKeystroke (
   DWORD             dwReserved,
   PXINPUT_KEYSTROKE pKeystroke )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetKeystroke_pfn _XInputGetKeystroke =
         (XInputGetKeystroke_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -186,12 +144,6 @@ XInputGetAudioDeviceIds (
   LPWSTR pCaptureDeviceId,
   UINT   *pCaptureCount )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetAudioDeviceIds_pfn _XInputGetAudioDeviceIds =
         (XInputGetAudioDeviceIds_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -210,12 +162,6 @@ XInputGetDSoundAudioDeviceGuids (
   GUID  *pDSoundRenderGuid,
   GUID  *pDSoundCaptureGuid )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputGetDSoundAudioDeviceGuids_pfn _XInputGetDSoundAudioDeviceGuids =
         (XInputGetDSoundAudioDeviceGuids_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -232,12 +178,6 @@ WINAPI
 XInputPowerOff (
   _In_ DWORD dwUserIndex )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return
-      ERROR_NOT_CONNECTED;
-  }
-
   static XInputPowerOff_pfn _XInputPowerOff =
         (XInputPowerOff_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,
@@ -253,11 +193,6 @@ WINAPI
 XInputEnable (
   _In_ BOOL enable )
 {
-  if (config.dwFillTheSwamp != 0x0)
-  {
-    return;
-  }
-
   static XInputEnable_pfn _XInputEnable =
         (XInputEnable_pfn)GetProcAddress (
           LoadLibraryExW ( config.wszPathToSystemXInput1_4,

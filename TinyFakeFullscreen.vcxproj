@@ -24,7 +24,7 @@
     <ProjectGuid>{a74b3bf0-bdcb-49dd-9106-7e38433b1ce8}</ProjectGuid>
     <RootNamespace>ValvePlug</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
-    <ProjectName>TinyFakeFullscreen</ProjectName>
+    <ProjectName>SKinny</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -72,10 +72,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>XInput1_4</TargetName>
+    <TargetName>dxgi</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetName>XInput1_4</TargetName>
+    <TargetName>dxgi</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -168,23 +168,27 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="streamline.h" />
     <ClInclude Include="xinput_defs.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="d3d12_proxy.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="dxgi_proxy.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="streamline.cpp" />
     <ClCompile Include="xinput_hooks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="XInput1_4.def" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="TinyFakeFullscreen.rc" />
+    <ResourceCompile Include="SKinny.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
